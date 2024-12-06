@@ -1,0 +1,203 @@
+  /* Place the enhanced CSS code here */
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    padding-top: 60px;
+    line-height: 1.6;
+}
+
+.dashboard-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #2e3b4e, #35475e);
+    padding: 20px 30px;
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+}
+
+/* Rest of the enhanced CSS... */
+
+.dashboard-header:hover {
+    background-color: #2b3649; /* Slight darkening effect on hover */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 2rem; /* Increased font size for prominence */
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 1px; /* Added spacing for a premium feel */
+}
+
+.logo-img {
+    height: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 2px solid #fff; /* Subtle border for the logo */
+    border-radius: 5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px; /* More spacing for modern aesthetics */
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem; /* Slightly larger font size */
+    padding: 10px 15px; /* Enhanced padding for better click area */
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: #4b5b71;
+    transform: translateY(-2px); /* Lifted effect on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Increased spacing for a cleaner look */
+    flex-wrap: wrap;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #d1d9e6; /* Softer border color */
+    border-radius: 8px; /* Rounded corners for modern feel */
+    padding: 8px 15px;
+    flex: 1;
+    max-width: 350px; /* Slightly wider for better usability */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    color: #555; /* Softer text color */
+    padding-left: 8px; /* Added spacing inside input */
+}
+
+.search-bar input::placeholder {
+    color: #aaa; /* Subtle placeholder color */
+}
+
+.search-bar button {
+    border: none;
+    background: none;
+    color: #4b5b71;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.search-bar button:hover {
+    color: #2e3b4e;
+    transform: scale(1.1); /* Enlarged effect on hover */
+}
+
+.logout-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #2e3b4e;
+    padding: 10px 25px;
+    border: 2px solid #ccc; /* Slightly thicker border */
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+.logout-btn i {
+    margin-right: 8px;
+}
+
+.logout-btn:hover {
+    background-color: #f0f4f8;
+    color: #1a202c;
+    transform: translateY(-2px); /* Lifted effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Stronger shadow on hover */
+}
+
+.profile-menu a img {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+.profile-menu a img:hover {
+    border-color: #4b5b71; /* Subtle hover effect for profile image */
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .header-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .search-bar {
+        width: 100%;
+        max-width: none;
+    }
+
+    .logout-btn {
+        width: 100%;
+        text-align: center;
+    }
+:root {
+        --header-height: 60px;
+    }
+
+
+}

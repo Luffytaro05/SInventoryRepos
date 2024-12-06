@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9fb;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #2c2f3c;
+    color: #ddd;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    width: 250px;
+    background: linear-gradient(135deg, #3e4a7a, #2b3a63);
+    color: white;
+    padding: 20px;
+    padding-top: 100px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s;
+}
+
+.sidebar .user-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.toggle-theme {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #444;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.toggle-theme:hover {
+    background: #666;
+    transform: scale(1.1);
+}
+
+.toggle-theme i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.main {
+    margin-left: 250px;
+    flex: 1;
+    padding: 30px;
+    background-color: #f9f9fb;
+    transition: margin-left 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main {
+        margin-left: 0;
+    }
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #3e4a7a;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-container input, .form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-container input:focus {
+    border-color: #3e4a7a;
+    outline: none;
+    box-shadow: 0 0 5px rgba(62, 74, 122, 0.5);
+}
+
+.form-container input::placeholder {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.form-container input:focus::placeholder {
+    opacity: 0;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(90deg, #3e4a7a, #2b3a63);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.form-container button:hover {
+    background: linear-gradient(90deg, #2b3a63, #1f2b47);
+    transform: scale(1.02);
+}
+
+.progress-bar {
+    height: 5px;
+    border-radius: 3px;
+    background: #ddd;
+    margin-bottom: 15px;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s;
+}
+
+.message {
+    background: #e0f7fa;
+    color: #00695c;
+    padding: 10px;
+    border: 1px solid #00acc1;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.message i {
+    margin-left: 10px;
+    cursor: pointer;
+}

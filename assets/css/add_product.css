@@ -1,0 +1,44 @@
+body {
+    background-color: #f0f4f7;
+}
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    background-color: #fff;
+}
+h2 {
+    color: #007bff;
+    font-weight: bold;
+}
+.btn-custom {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.btn-custom:hover {
+    background-color: #218838;
+}
+.form-group label {
+    font-weight: bold;
+    color: #495057;
+}
+input.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,.5);
+}
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    display: none;
+}
