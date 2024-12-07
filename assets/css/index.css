@@ -1,0 +1,118 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #005f6a, #009688);
+    color: #fff;
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #004d4f;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+}
+.hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.hero-section p {
+    font-size: 1rem;
+    margin: 20px 0;
+    line-height: 1.5;
+}
+.btn-primary, .btn-outline-light {
+    font-size: 1rem;
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 25px;
+}
+.about-section {
+    background-color: #fff;
+    color: #333;
+    padding: 40px 20px;
+    text-align: center;
+}
+.about-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.about-section p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+.features {
+    background-color: #005f6a;
+    padding: 40px 20px;
+    text-align: center;
+}
+.features h3 {
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.feature-box {
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+}
+.feature-box i {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+.feature-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.footer {
+    background-color: #004d4f;
+    color: #ddd;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+    .btn-primary, .btn-outline-light {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+    }
+    .feature-box {
+        display: inline-block;
+        width: 30%;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+}

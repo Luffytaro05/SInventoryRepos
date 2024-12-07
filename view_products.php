@@ -1,6 +1,20 @@
 <?php
 include 'includes/header.php';
-include 'db.php'; 
+include 'db_connect.php'; 
+include 'db.php';
+
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: login.php');
+    exit;
+}
+// Get user data from session
+$userId = $_SESSION['user_id'];
+$userName = $_SESSION['user_name'];
 
 $sql = "SELECT p.id, p.product_name, p.price, p.stock AS quantity, s.supplier_name 
         FROM products p 

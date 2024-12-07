@@ -1,13 +1,21 @@
 <?php
-session_start();
+include 'includes/header.php';
+include 'db_connect.php';
+include 'db.php';
+
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: login.php');
     exit;
 }
+// Get user data from session
+$userId = $_SESSION['user_id'];
+$userName = $_SESSION['user_name'];
 
-include 'includes/header.php';
-include 'db.php';
 
 $totalProducts = $pdo->query("SELECT COUNT(*) FROM products")->fetchColumn();
 $totalOrdersToday = $pdo->query("SELECT COUNT(*) FROM orders WHERE DATE(created_at) = CURDATE()")->fetchColumn();
@@ -52,6 +60,8 @@ $sql = "SELECT p.product_name, p.stock AS quantity
         FROM products p";
 $stmt = $pdo->query($sql);
 $productLevels = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+include 'includes/header.php';
 ?>
 
 <?php

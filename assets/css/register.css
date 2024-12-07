@@ -2,71 +2,75 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #005f6a; /* Deep teal background */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container {
     display: flex;
-    background-color: #f0f4f8; /* Light grayish background */
-    border-radius: 20px; /* Softer rounded corners */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for more depth */
+    flex-direction: row; /* Default for larger screens */
+    background-color: #f0f4f8; /* Light background for contrast */
+    border-radius: 20px; /* Rounded for a modern look */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
     overflow: hidden;
     width: 90%; /* Adjust width for responsiveness */
-    max-width: 1200px; /* Limit max width */
+    max-width: 1200px;
+    transition: all 0.3s ease-in-out; /* Smooth transitions for layout adjustments */
 }
 
 .branding-section {
-    padding: 40px;
-    background-color: #eaeaea; /* Light gray */
-    border-radius: 20px 0 0 20px; /* Rounded top-left and bottom-left corners */
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Inner shadow */
-    color: #333; /* Darker text for contrast */
+    padding: 5%; /* Dynamic padding for responsiveness */
+    background-color: #eaeaea;
+    border-radius: 20px 0 0 20px; /* Rounded corners */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Center content */
+    flex: 1; /* Allow for flexible resizing */
+    text-align: center; /* Center-align text for mobile screens */
 }
 
 .branding-section h1 {
-    font-size: 2.5rem; /* Larger header */
-    color: #333; /* Dark color for better visibility */
+    font-size: 2.5rem;
+    color: #333; /* Darker color for the title */
     margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    letter-spacing: 1px; /* Slight letter spacing */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    letter-spacing: 1px; /* Slight letter spacing for readability */
 }
 
 .form-section {
-    background: linear-gradient(135deg, #667a8c, #003d47); /* Gradient background */
-    padding: 40px;
-    border-radius: 0 20px 20px 0; /* Rounded top-right and bottom-right corners */
+    background-color: #667a8c;
+    padding: 5%; /* Dynamic padding for responsiveness */
+    border-radius: 0 20px 20px 0; /* Rounded corners */
     color: white;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Inner shadow */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    flex: 1; /* Allow for flexible resizing */
+    text-align: left; /* Keep form aligned to the left for usability */
+    position: relative; /* Maintain relative positioning */
 }
 
 .form-section h2 {
-    margin-bottom: 25px; /* Increased margin */
-    font-size: 2rem; /* Larger header */
-    font-weight: 600; /* Bold header */
-    color: #eaeaea; /* Lighter text */
-}
-
-.form-section p {
-    margin-bottom: 20px; /* Consistent spacing */
-    font-size: 1rem; /* Readable size */
-    line-height: 1.5; /* Improved spacing */
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 600; /* Semi-bold */
+    color: #eaeaea; /* Light text for contrast */
+    text-transform: uppercase; /* Makes the header more prominent */
 }
 
 .form-control {
     width: 100%;
-    padding: 14px; /* Larger padding */
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 8px; /* Softer corners */
+    border-radius: 8px;
     font-size: 1rem;
     margin-bottom: 15px;
     outline: none;
@@ -74,52 +78,83 @@ body {
     box-sizing: border-box;
 }
 
-.form-control:focus {
-    border-color: #005f6a; /* Highlight color */
-    box-shadow: 0 0 10px rgba(0, 95, 106, 0.4); /* Enhanced focus effect */
-    transform: scale(1.02); /* Subtle zoom effect */
-}
-
 .btn {
     width: 100%;
-    background-color: #005f6a; /* Primary button color */
+    background-color: #005f6a;
     color: white;
-    padding: 14px; /* Larger padding */
+    padding: 12px;
     border: none;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, filter 0.3s;
-    font-weight: 600; /* Bold text */
-    box-shadow: 0 4px 10px rgba(0, 95, 106, 0.3); /* Soft shadow */
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 95, 106, 0.3);
 }
 
-.btn:hover {
-    background-color: #003d47; /* Darker shade for hover */
-    transform: translateY(-3px); /* Subtle lift effect */
-    box-shadow: 0 6px 12px rgba(0, 95, 106, 0.5); /* Deeper shadow */
-    filter: brightness(1.1); /* Slightly brighter on hover */
+/* Responsive adjustments for medium screens */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+        max-width: 900px;
+    }
+    .branding-section h1 {
+        font-size: 2rem;
+    }
+    .form-section h2 {
+        font-size: 1.8rem;
+    }
 }
 
-.btn:active {
-    background-color: #002a32; /* Darkest shade for active */
-    transform: translateY(1px); /* Depressed effect */
-    box-shadow: 0 2px 5px rgba(0, 95, 106, 0.3); /* Softer shadow */
-    filter: brightness(0.9); /* Darkens button on click */
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center container */
+        width: 100%; /* Use full width on smaller screens */
+    }
+
+    .branding-section,
+    .form-section {
+        position: relative; /* Maintain relative positioning */
+        width: 90%; /* Ensure both sections are full-width */
+        border-radius: 20px; /* Fully rounded corners */
+        padding: 7%; /* Adjust padding for smaller screens */
+        margin-bottom: 20px; /* Space between sections */
+    }
+
+    .branding-section h1 {
+        font-size: 1.8rem; /* Adjust font size for smaller screens */
+    }
+
+    .form-section h2 {
+        font-size: 1.6rem; /* Adjust font size */
+    }
 }
 
-.btn:focus {
-    outline: none; /* Removes default focus outline */
-    box-shadow: 0 0 12px rgba(0, 95, 106, 0.7); /* Glow effect for focus */
-}
+/* Further adjustments for extra-small screens */
+@media (max-width: 480px) {
+    .branding-section,
+    .form-section {
+        position: relative; /* Maintain relative positioning */
+        width: 100%; /* Ensure both sections are full-width */
+        border-radius: 20px; /* Fully rounded corners */
+        padding: 7%; /* Adjust padding for smaller screens */
+        margin-bottom: 20px; /* Space between sections */
+    }
+    .branding-section{
+        flex: 1; 
+        display: flex;
+    }
+    .branding-section h1 {
+        font-size: 1.5rem; /* Reduce font size for extra-small screens */
+    }
 
-.form-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px; /* Thicker top border */
-    background: linear-gradient(90deg, #005f6a, #003d47); /* Gradient top border */
-    border-radius: 20px 20px 0 0; /* Rounded corners */
+    .form-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .form-control, .btn {
+        font-size: 0.85rem; /* Slightly smaller font size */
+    }
 }

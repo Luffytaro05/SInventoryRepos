@@ -1,6 +1,20 @@
 <?php
-include 'db.php'; 
+include 'db_connect.php'; 
 include 'includes/header.php'; 
+include 'db.php';
+
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: login.php');
+    exit;
+}
+// Get user data from session
+$userId = $_SESSION['user_id'];
+$userName = $_SESSION['user_name'];
 
 $error = '';
 $success = '';
@@ -29,7 +43,7 @@ if (isset($_GET['delete_order_id'])) {
         $error = "Error deleting order: " . $e->getMessage();
     }
 }
-
+include 'includes/header.php';
 ?>
 
 <!DOCTYPE html>
